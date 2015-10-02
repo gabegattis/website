@@ -1,0 +1,24 @@
+#hero {
+  padding: 48px 0;
+  background: url("/img/hero.jpg") top center repeat;
+}
+#hero h2 {
+  font-family: 'Roboto';
+  text-align: center;
+  font-size: 38px;
+  margin-top: 0;
+  color: #fff;
+}
+#hero .cta {
+  text-align: center;
+  font-family: 'Roboto';
+}
+#hero .cta a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+}
+#hero .cta a:hover {
+  text-decoration: underline;
+}

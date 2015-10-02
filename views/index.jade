@@ -1,0 +1,18 @@
+extends ./layout.jade
+
+block head
+  link(rel='stylesheet', href='/css/hero.css')
+
+block content
+  section#hero
+    .container
+      h2 
+        span We are a free education collective, composed of
+        br
+        strong#we-are-blank hackers
+        span .
+      div.cta
+        em 
+          a(href='/mission') Let's change the world together.
+      script(type='text/javascript', src='/js/hero.js')
+  include ./includes/events

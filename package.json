@@ -1,0 +1,26 @@
+{
+  "name": "counterpointhackers",
+  "version": "1.0.0",
+  "description": "website and donation payment system for counterpoint hackerspace",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "-"
+  },
+  "keywords": [
+    "counterpoint",
+    "hackerspace"
+  ],
+  "author": "Gordon <gordon@gordonwritescode.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "mongoose": "^4.1.6",
+    "serve-favicon": "^2.3.0",
+    "stylus": "^0.52.4"
+  }
+}

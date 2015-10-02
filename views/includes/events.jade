@@ -1,0 +1,11 @@
+// temporary events stub
+- var events = []
+
+section#events
+  h2 Upcoming Events
+  if events.length
+    ul
+      each event in events
+        li Event Name
+  else
+    p There are no upcoming events. Check back soon!

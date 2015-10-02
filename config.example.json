@@ -1,0 +1,22 @@
+{
+  "server": {
+    "address": "127.0.0.1",
+    "port": 8443,
+    "ssl": false,
+    "key": "",
+    "cert": "",
+    "ca": [],
+    "redirect": false
+  },
+  "storage": {
+    "name": "counterpoint",
+    "user": "",
+    "pass": "",
+    "nodes": [
+      {
+        "host": "127.0.0.1",
+        "port": "27017"
+      }
+    ]
+  }
+}

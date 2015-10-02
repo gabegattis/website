@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'I pixel u';
+  src: url("/fonts/I-pixel-u.ttf");
+}
+@font-face {
+  font-family: 'Roboto';
+  font-weight: normal;
+  src: url("/fonts/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: 'Roboto';
+  font-weight: bold;
+  src: url("/fonts/Roboto-Bold.ttf");
+}
+body {
+  margin: 0;
+}
+.container {
+  width: 960px;
+  margin: auto;
+}
+header {
+  overflow: hidden;
+}
+header nav {
+  float: right;
+}
+header nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+header nav ul li {
+  float: right;
+}
+header nav ul li a {
+  display: block;
+  padding: 22px 12px;
+  margin: 0 12px;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-family: sans-serif;
+}
+header nav ul li a:hover {
+  color: #a00;
+  border-bottom: 2px solid #a00;
+}
+header #logo {
+  float: left;
+  font-family: 'I pixel u';
+  font-size: 48px;
+  font-weight: normal;
+  padding: 12px 12px 12px 86px;
+  margin: 0;
+  height: 42px;
+  background: url("/img/logo.png") 12px center no-repeat;
+  background-size: 58px 58px;
+}
+header #logo span {
+  position: relative;
+  top: -18px;
+}
+header #logo .primary {
+  color: #a00;
+}
+header #logo .secondary {
+  color: #1a1a1a;
+}
