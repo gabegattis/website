@@ -9,10 +9,12 @@ var http = require('http');
 var https = require('https');
 var fs = require('fs');
 
+var mongodb = require('mongoose');
 var express = require('express');
 var stylus = require('stylus');
 var jade = require('jade');
 var favicon = require('serve-favicon');
+var moment = require('moment');
 
 var forceSSL = require('./middleware/forcessl');
 
@@ -44,6 +46,7 @@ Server.prototype.bootstrap = function() {
   this._loadApplications();
   this._startServer();
   this._startRedirector();
+  this._connectDatabase();
 };
 
 /**
@@ -63,6 +66,8 @@ Server.prototype._configureApp = function() {
   }));
   this._app.use(favicon(__dirname + '/public/img/favicon.png'));
   this._app.use(express.static(__dirname + '/public'));
+
+  this._app.locals = moment;
 };
 
 /**
@@ -78,6 +83,10 @@ Server.prototype._loadApplications = function() {
     manifest.forEach(function(route) {
       self._app[route[0]](route[1], route[2]);
     });
+  });
+
+  this._app.all('*', function(req, res) {
+    res.render('notfound');
   });
 };
 
@@ -134,6 +143,30 @@ Server.prototype._startRedirector = function() {
 
     console.info('redirecting from port: %s', self.config.server.redirect);
   });
+};
+
+/**
+ * Connects to configured MongoDB instance
+ * #_connectDatabase
+ */
+Server.prototype._connectDatabase = function() {
+  var self = this;
+
+  this.storage = mongodb.connect(
+    'mongodb://' + this.config.storage.user +
+    ':' + this.config.storage.pass +
+    '@' + this.config.storage.host +
+    ':' + this.config.storage.port +
+    '/' + this.config.storage.name,
+    function done(err) {
+      if (err) {
+        console.log('error connecting to database', err);
+        process.exit();
+      } else {
+        console.log('connected to database: %s', self.config.storage.name);
+      }
+    }
+  );
 };
 
 module.exports = Server;

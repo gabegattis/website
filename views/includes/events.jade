@@ -1,12 +1,14 @@
-// temporary events stub
-- var events = []
-
 section#events
   .container
     h2 Upcoming Events
     if events.length
       ul
         each event in events
-          li Event Name
+          li.event
+            h3(data-category='#{event.category}') #{event.title}
+            - var readable_date = moment(event.datetime).format('dddd, MMMM Do - h:mm a')
+            em.date #{readable_date}
+            p #{event.description}
+            a.location(href='https://www.openstreetmap.org/search?query=#{event.location.address}, #{event.location.city} #{event.location.state}, #{event.location.zip}') #{event.location.address}
     else
       p There are no upcoming events. Check back soon!

@@ -5,7 +5,7 @@
 'use strict';
 
 module.exports = [
-  ['get', '/', render_home],
+  ['get', '/', require('./controllers/home')],
   ['get', '/membership', render_membership],
   ['get', '/classes', render_classes],
   ['get', '/donate', render_donate],
@@ -13,14 +13,8 @@ module.exports = [
   ['get', '/faq', render_faq],
   ['get', '/contact', render_contact],
   ['get', '/api', render_api],
-  ['get', '/legal', render_legal],
-
-  ['get', '*', render_notfound]
+  ['get', '/legal', render_legal]
 ];
-
-function render_home(req, res) {
-  res.render('index');
-}
 
 function render_membership(req, res) {
   res.render('membership');
@@ -53,9 +47,3 @@ function render_api(req, res) {
 function render_legal(req, res) {
   res.render('legal');
 }
-
-function render_notfound(req, res) {
-  res.render('notfound');
-}
-
-
