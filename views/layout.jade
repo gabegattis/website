@@ -5,6 +5,8 @@ html
     link(rel='stylesheet', href='/css/base.css')
     block head
   body
-    include ./includes/header
-    block content
+    .wrapper
+      include ./includes/header
+      block content
+      .push
     include ./includes/footer

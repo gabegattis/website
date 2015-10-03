@@ -2,6 +2,7 @@
 
 (function() {
 
+  var INTERVAL = 1000;
   var who = document.querySelector('#we-are-blank');
   var options = [
     'hackers',
@@ -12,7 +13,12 @@
     'friends',
     'philosophers',
     'dreamers',
-    'gardeners'
+    'gardeners',
+    'engineers',
+    'builders',
+    'tinkerers',
+    'do-it-yourselfers',
+    'geeks'
   ];
 
   setInterval(function() {
@@ -25,6 +31,6 @@
     }
 
     who.innerHTML = options[current];
-  }, 500);
+  }, INTERVAL);
 
 })();

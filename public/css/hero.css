@@ -1,13 +1,13 @@
 #hero {
-  padding: 48px 0;
   background: url("/img/hero.jpg") top center repeat;
 }
-#hero h2 {
+#hero .who {
   font-family: 'Roboto';
   text-align: center;
   font-size: 38px;
   margin-top: 0;
   color: #fff;
+  margin-bottom: 24px;
 }
 #hero .cta {
   text-align: center;
