@@ -12,22 +12,25 @@ block content
         consider making a donation!
       section.fiat
         h3 Credit Card
-        form#card-donation(action='/payments', method='POST', data-token='#{clientToken}')
-          label(for='card-number') Card Number
-          #card-number.bt-ctr
-          .third  
-            section
-              label(for='cvv') CVV
-              #cvv.bt-ctr
-            section
-              label(for='expiration') Expiration
-              #expiration.bt-ctr
-            section
-              label(for='amount') Amount
-              input(type='tel' name='amount', placeholder='25.00')
-          input(type='submit', value='Donate')
-          script(src='https://js.braintreegateway.com/v2/braintree.js')
-          script(src='/js/donate.js')
+        if paymentResult
+          p Success! #{paymentResult}
+        else
+          form#card-donation(action='/donate', method='POST', data-token='#{clientToken}')
+            label(for='card-number') Card Number
+            #card-number.bt-ctr
+            .third  
+              section
+                label(for='cvv') CVV
+                #cvv.bt-ctr
+              section
+                label(for='expiration') Expiration
+                #expiration.bt-ctr
+              section
+                label(for='amount') Amount
+                input(type='tel' name='amount', placeholder='25.00')
+            input(type='submit', value='Donate')
+            script(src='https://js.braintreegateway.com/v2/braintree.js')
+            script(src='/js/donate.js')
       section.bitcoin
         h3 Bitcoin
         a(href='bitcoin:3HwoE3LBpQkRsghHLT7MCwFw9nRSYQwZhY')

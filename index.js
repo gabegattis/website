@@ -21,20 +21,14 @@ var forceSSL = require('./middleware/forcessl');
 /**
  * Represents the Counterpoint Server
  * @constructor
- * @param {String} configFile
+ * @param {Object} config
  */
-function Server(configFile) {
+function Server(config) {
   if (!(this instanceof Server)) {
-    return new Server(configFile);
+    return new Server(config);
   }
 
-  this.config = null;
-
-  try {
-    this.config = JSON.parse(configFile);
-  } catch (err) {
-    throw new Error('Invalid configuration file supplied');
-  }
+  this.config = config;
 }
 
 /**
@@ -67,7 +61,7 @@ Server.prototype._configureApp = function() {
   this._app.use(favicon(__dirname + '/public/img/favicon.png'));
   this._app.use(express.static(__dirname + '/public'));
 
-  this._app.locals = moment;
+  this._app.locals.moment = moment;
 };
 
 /**
@@ -83,6 +77,13 @@ Server.prototype._loadApplications = function() {
     manifest.forEach(function(route) {
       self._app[route[0]](route[1], route[2]);
     });
+  });
+
+  // TODO: this error handler is not rendering
+  this._app.use(function(err, req, res) {
+    if (err) {
+      return res.render('error', { error: err });
+    }
   });
 
   this._app.all('*', function(req, res) {

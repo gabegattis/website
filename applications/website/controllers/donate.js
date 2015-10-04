@@ -4,15 +4,16 @@
 
 'use strict';
 
+var config = require('../../../config').braintree
 var querystring = require('querystring');
 var braintree = require('braintree');
 
 // TODO: load this from configuration
 var gateway = braintree.connect({
-  environment:  braintree.Environment.Sandbox,
-  merchantId:   'z2ncwzsb8j52zncr',
-  publicKey:    '9bx3392m75tk7h4s',
-  privateKey:   'b7dcd6d43cf4410eb8eba4419f2fc393'
+  environment:  braintree.Environment[config.env],
+  merchantId: config.merchant,
+  publicKey: config.pubkey,
+  privateKey: config.privkey
 });
 
 module.exports.process_payment = function(req, res, next) {
@@ -23,7 +24,7 @@ module.exports.process_payment = function(req, res, next) {
   });
 
   req.on('end', function() {
-    body = querystring.parse(data);
+    body = querystring.parse(body);
 
     gateway.transaction.sale({
       amount: body.amount,

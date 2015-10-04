@@ -1,0 +1,7 @@
+extends ./layout
+
+block content
+  h2 Oh No!
+  p #{error.message}
+  pre
+    code #{error.stack}
