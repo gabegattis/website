@@ -34,6 +34,12 @@ module.exports.process_payment = function(req, res, next) {
         return next(err);
       }
 
+      if (result.success !== true) {
+        return next(new Error(result.message));
+      }
+
+      console.log(result)
+
       res.render('donate', {
         paymentResult: result
       });

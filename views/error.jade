@@ -1,7 +1,11 @@
 extends ./layout
 
+block head
+  link(rel='stylesheet', href='/css/error.css')
+
 block content
-  h2 Oh No!
-  p #{error.message}
-  pre
-    code #{error.stack}
+  .container
+    h2 Well, this is embarrassing...
+    p An error occurred while processing your request. Stack trace is shown below.
+    pre
+      code #{error.stack}

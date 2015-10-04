@@ -79,15 +79,14 @@ Server.prototype._loadApplications = function() {
     });
   });
 
-  // TODO: this error handler is not rendering
-  this._app.use(function(err, req, res) {
+  this._app.all('*', function(req, res) {
+    res.render('notfound');
+  });
+
+  this._app.use(function(err, req, res, next) {
     if (err) {
       return res.render('error', { error: err });
     }
-  });
-
-  this._app.all('*', function(req, res) {
-    res.render('notfound');
   });
 };
 

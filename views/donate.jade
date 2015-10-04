@@ -13,7 +13,7 @@ block content
       section.fiat
         h3 Credit Card
         if paymentResult
-          p Success! #{paymentResult}
+          p Got it, thanks for your $#{paymentResult.transaction.amount} donation! 
         else
           form#card-donation(action='/donate', method='POST', data-token='#{clientToken}')
             label(for='card-number') Card Number

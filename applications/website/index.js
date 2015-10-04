@@ -37,7 +37,7 @@ function render_contact(req, res) {
   res.render('contact');
 }
 
-function render_api(req, res) {
+function render_api(req, res, next) {
   res.render('api');
 }
 
