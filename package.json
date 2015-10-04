@@ -17,6 +17,7 @@
   "author": "Gordon <gordon@gordonwritescode.com>",
   "license": "GPL-3.0",
   "dependencies": {
+    "braintree": "^1.29.0",
     "express": "^4.13.3",
     "jade": "^1.11.0",
     "moment": "^2.10.6",

@@ -5,15 +5,16 @@
 'use strict';
 
 module.exports = [
-  ['get', '/', require('./controllers/home')],
+  ['get', '/', require('./controllers/home').get_upcoming_events],
   ['get', '/membership', render_membership],
   ['get', '/classes', render_classes],
-  ['get', '/donate', render_donate],
+  ['get', '/donate', require('./controllers/donate').get_client_token],
   ['get', '/mission', render_mission],
   ['get', '/faq', render_faq],
   ['get', '/contact', render_contact],
   ['get', '/api', render_api],
-  ['get', '/legal', render_legal]
+  ['get', '/legal', render_legal],
+  ['post', '/donate', require('./controllers/donate').process_payment]
 ];
 
 function render_membership(req, res) {
@@ -22,10 +23,6 @@ function render_membership(req, res) {
 
 function render_classes(req, res) {
   res.render('classes');
-}
-
-function render_donate(req, res) {
-  res.render('donate');
 }
 
 function render_mission(req, res) {

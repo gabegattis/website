@@ -6,7 +6,7 @@
 
 var Event = require('../models/event');
 
-module.exports = function(req, res) {
+module.exports.get_upcoming_events = function(req, res) {
   var limit = new Date();
 
   limit.setDate(limit.getDate() + 30);
