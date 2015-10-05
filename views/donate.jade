@@ -13,6 +13,7 @@ block content
       section.fiat
         h3 Credit Card
         if paymentResult
+          img(src='/img/circle-ok.png')
           p Got it, thanks for your $#{paymentResult.transaction.amount} donation! 
         else
           form#card-donation(action='/donate', method='POST', data-token='#{clientToken}')

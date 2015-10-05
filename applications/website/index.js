@@ -12,7 +12,6 @@ module.exports = [
   ['get', '/mission', render_mission],
   ['get', '/faq', render_faq],
   ['get', '/contact', render_contact],
-  ['get', '/api', render_api],
   ['get', '/legal', render_legal],
   ['post', '/donate', require('./controllers/donate').process_payment]
 ];
@@ -35,10 +34,6 @@ function render_faq(req, res) {
 
 function render_contact(req, res) {
   res.render('contact');
-}
-
-function render_api(req, res, next) {
-  res.render('api');
 }
 
 function render_legal(req, res) {

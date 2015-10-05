@@ -1,11 +1,6 @@
-.success {
-  background: url("/img/glyphicons-circle-ok.png") left center no-repeat;
-}
-.love {
-  text-align: center;
-  color: #a00;
-  font-family: 'I pixel u';
-  text-transform: uppercase;
+img {
+  float: left;
+  margin: 22px 12px 0 0;
 }
 p {
   font-size: 18px;
