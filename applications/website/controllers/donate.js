@@ -4,7 +4,7 @@
 
 'use strict';
 
-var config = require('../../../config').braintree
+var config = require('../../../config').braintree;
 var querystring = require('querystring');
 var braintree = require('braintree');
 
@@ -38,7 +38,7 @@ module.exports.process_payment = function(req, res, next) {
         return next(new Error(result.message));
       }
 
-      console.log(result)
+      // TODO: we should probably keep our own record of transactions
 
       res.render('donate', {
         paymentResult: result
