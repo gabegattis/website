@@ -18,7 +18,7 @@ First, clone this repository and install dependencies.
 
 ```bash
 git clone https://github.com/counterpointhackers/counterpointhackers.git
-cd coutnerpointhackers
+cd counterpointhackers
 npm install --no-optional
 ```
 
