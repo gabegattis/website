@@ -7,7 +7,7 @@
 module.exports = [
   ['get', '/', require('./controllers/home').get_upcoming_events],
   ['get', '/membership', render_membership],
-  ['get', '/classes', render_classes],
+  ['get', '/classes', require('./controllers/classes').get_upcoming_classes],
   ['get', '/donate', require('./controllers/donate').get_client_token],
   ['get', '/mission', render_mission],
   ['get', '/faq', render_faq],
@@ -18,10 +18,6 @@ module.exports = [
 
 function render_membership(req, res) {
   res.render('membership');
-}
-
-function render_classes(req, res) {
-  res.render('classes');
 }
 
 function render_mission(req, res) {

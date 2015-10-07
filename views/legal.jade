@@ -1,7 +1,16 @@
 extends ./layout
 
+block head
+  link(rel='stylesheet', href='/css/legal.css')
+
 block content
   section#legal
     .container
       h2 Legal
-      p Nothing here yet.
+      ul
+        li
+          a(href='https://github.com/counterpointhackers/documents/blob/master/operations/bylaws.md') Bylaws
+        li
+          a(href='#') Articles of Incorporation
+        li
+          a(href='https://github.com/counterpointhackers/documents/tree/master/meetings') Meeting Minutes Archive

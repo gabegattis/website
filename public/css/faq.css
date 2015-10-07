@@ -1,0 +1,22 @@
+#faq ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#faq ul li {
+  margin: 12px 0;
+}
+#faq ul li h4.question {
+  background: url("/img/question.png") left center no-repeat;
+  background-size: 22px;
+  color: #a00;
+  font-size: 20px;
+  padding: 12px 0px 12px 34px;
+}
+#faq ul li p.answer {
+  color: #1a1a1a;
+  padding: 12px;
+  background: #f9f9f9;
+  font-size: 16px;
+  margin: 6px 0;
+}

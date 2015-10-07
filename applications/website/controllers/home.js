@@ -22,7 +22,9 @@ module.exports.get_upcoming_events = function(req, res) {
     }
 
     res.render('index', {
-      events: err ? [] : events
+      events: err ? [] : events.sort(function(a, b) {
+        return a.datetime > b.datetime;
+      })
     });
   });
 };

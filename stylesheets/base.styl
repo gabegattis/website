@@ -62,6 +62,15 @@ html, body
   height: 100%
   font-family: 'Roboto'
 
+pre
+  border: 1px solid #d2d2d2
+  padding: 24px
+  font-size: 16px
+  overflow: auto
+
+h3
+  margin: 12px 0
+
 blockquote
   max-width: 600px
   color: #999999
@@ -218,3 +227,52 @@ footer
 
     &:hover
       text-decoration: underline
+
+#events, #classes
+  ul
+    list-style-type: none
+    padding: 0
+
+    li
+      border: 1px solid #d2d2d2
+      padding: 0
+      margin-bottom: 24px
+
+      h3
+        border-bottom: 1px solid #d2d2d2
+        padding: 12px 12px 12px 56px
+        margin: 0px 0px 12px
+        background-repeat: no-repeat
+        background-position: 12px center
+        background-color: #f6f6f6
+        color: GRAY
+
+        &[data-category='meeting']
+          background-image: url('/img/event-meeting.png')
+
+        &[data-category='workshop']
+          background-image: url('/img/event-workshop.png')
+      
+        &[data-category='class']
+          background-image: url('/img/event-class.png')
+          
+        &[data-category='special']
+          background-image: url('/img/event-special.png')
+
+      em.date
+        background: url('/img/event-date.png') left center no-repeat
+        
+      em.date, a.location
+        display: inline-block
+        padding: 0 0 0 24px
+        background-size: 16px !important
+        margin-right: 24px
+        font-style: normal
+        color: RED
+
+      p
+        font-size: 16px
+        margin: 12px
+    
+      a.location
+        background: url('/img/event-location.png') left center no-repeat

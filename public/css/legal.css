@@ -1,0 +1,11 @@
+#legal ul {
+  list-style-type: square;
+}
+#legal ul li a {
+  font-size: 18px;
+  color: #a00;
+  text-decoration: none;
+}
+#legal ul li a:hover {
+  text-decoration: underline;
+}

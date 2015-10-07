@@ -7,6 +7,9 @@
     "test": "mocha test/**",
     "start": "node scripts/start.js"
   },
+  "bin": {
+    "cpadmin": "scripts/admin.js"
+  },
   "repository": {
     "type": "git",
     "url": "-"
@@ -19,10 +22,15 @@
   "license": "GPL-3.0",
   "dependencies": {
     "braintree": "^1.29.0",
+    "commander": "^2.8.1",
     "express": "^4.13.3",
+    "hat": "0.0.3",
     "jade": "^1.11.0",
+    "jsonrpc": "^0.1.1",
     "moment": "^2.10.6",
     "mongoose": "^4.1.6",
+    "prompt": "^0.2.14",
+    "request": "^2.64.0",
     "serve-favicon": "^2.3.0",
     "stylus": "^0.52.4"
   }

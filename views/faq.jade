@@ -1,7 +1,39 @@
 extends ./layout
 
+block head
+  link(rel='stylesheet', href='/css/faq.css')
+
 block content
   section#faq
     .container
       h2 Frequently Asked Questions
-      p Nothing here yet.
+      ul
+        li
+          h4.question What exactly is a hackerspace?
+          p.answer.
+            A hackerspace is a physical space where anyone can come and work on projects and learn new things! A 
+            "hacker" is anyone who enjoys building things, breaking things, and inventing new ways to do both.
+        li
+          h4.question How can it be free?
+          p.answer.
+            Learning should not be a priviledge that can only be granted by undertaking crippling debt or submission 
+            to the authority of an institution. Learning is a natural and necessary property of consciousness and 
+            must be free as in both freedom and price. We operate on charitable donations from people who share this 
+            belief.
+        li
+          h4.question How do I get involved?
+          p.answer. 
+            If you haven't attended a meeting, then come to the next one and meet everyone! Counterpoint belongs to 
+            everyone, and everyone can help. Start a class or workshop or invite us to participate in a project!
+        li
+          h4.question What does "founded on anarchist principles" mean?
+          p.answer.
+            There is an incredibly wide range of anarchist philosophy in the areas of economics, property, and ethics. 
+            What all variations hold in common, however, is the belief that systems of hierarchy should be abolished and 
+            that partipcation in any given practice should be voluntary and inclusive. This belief is central to how we 
+            make decisions and how we intend to organize our community.
+        li
+          h4.question Where are you located?
+          p.answer.
+            We do not have a central physical space yet, but we are composed of members from all over Atlanta and 
+            surrounding areas.

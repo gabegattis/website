@@ -6,7 +6,7 @@
 
 var mongodb = require('mongoose');
 
-module.exports = mongodb.model('Event', new mongodb.Schema({
+var Event = new mongodb.Schema({
   title: {
     type: String,
     required: true
@@ -29,4 +29,26 @@ module.exports = mongodb.model('Event', new mongodb.Schema({
     type: Date,
     required: true
   }
-}));
+});
+
+Event.set('toObject', {
+  transform: function(doc, ret, options) {
+    ret.id = doc._id;
+    delete ret._id;
+    delete ret.__v;
+  }
+});
+
+Event.statics.create = function(event, callback) {
+  var doc = new this(event);
+
+  doc.save(function(err) {
+    if (err) {
+      return callback(err);
+    }
+
+    callback(null, doc.toObject());
+  });
+};
+
+module.exports = mongodb.model('Event', Event);

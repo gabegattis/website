@@ -68,6 +68,15 @@ body {
   height: 100%;
   font-family: 'Roboto';
 }
+pre {
+  border: 1px solid #d2d2d2;
+  padding: 24px;
+  font-size: 16px;
+  overflow: auto;
+}
+h3 {
+  margin: 12px 0;
+}
 blockquote {
   max-width: 600px;
   color: #999;
@@ -224,4 +233,65 @@ footer ul li a:hover {
 }
 .copyleft .licenses a:hover {
   text-decoration: underline;
+}
+#events ul,
+#classes ul {
+  list-style-type: none;
+  padding: 0;
+}
+#events ul li,
+#classes ul li {
+  border: 1px solid #d2d2d2;
+  padding: 0;
+  margin-bottom: 24px;
+}
+#events ul li h3,
+#classes ul li h3 {
+  border-bottom: 1px solid #d2d2d2;
+  padding: 12px 12px 12px 56px;
+  margin: 0px 0px 12px;
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-color: #f6f6f6;
+  color: #1a1a1a;
+}
+#events ul li h3[data-category='meeting'],
+#classes ul li h3[data-category='meeting'] {
+  background-image: url("/img/event-meeting.png");
+}
+#events ul li h3[data-category='workshop'],
+#classes ul li h3[data-category='workshop'] {
+  background-image: url("/img/event-workshop.png");
+}
+#events ul li h3[data-category='class'],
+#classes ul li h3[data-category='class'] {
+  background-image: url("/img/event-class.png");
+}
+#events ul li h3[data-category='special'],
+#classes ul li h3[data-category='special'] {
+  background-image: url("/img/event-special.png");
+}
+#events ul li em.date,
+#classes ul li em.date {
+  background: url("/img/event-date.png") left center no-repeat;
+}
+#events ul li em.date,
+#classes ul li em.date,
+#events ul li a.location,
+#classes ul li a.location {
+  display: inline-block;
+  padding: 0 0 0 24px;
+  background-size: 16px !important;
+  margin-right: 24px;
+  font-style: normal;
+  color: #a00;
+}
+#events ul li p,
+#classes ul li p {
+  font-size: 16px;
+  margin: 12px;
+}
+#events ul li a.location,
+#classes ul li a.location {
+  background: url("/img/event-location.png") left center no-repeat;
 }
