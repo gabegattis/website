@@ -17,8 +17,8 @@ You'll need to have the following tools installed to work on the website.
 First, clone this repository and install dependencies.
 
 ```bash
-git clone https://github.com/counterpointhackers/counterpointhackers.git
-cd counterpointhackers
+git clone https://github.com/counterpointhackers/website.git
+cd website
 npm install --no-optional
 ```
 
@@ -39,6 +39,23 @@ Start the server and party.
 
 ```bash
 npm start
+```
+
+Administration
+--------------
+
+To add events and other content to the website, you can use the `cpadmin` 
+program bundled with this package. First link the program to your `$PATH`.
+
+```bash
+cd website && npm link
+```
+
+Now you can use the admin script to add dynamic content. See the help for 
+details.
+
+```bash
+cpadmin --help
 ```
 
 License
