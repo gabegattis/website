@@ -1,5 +1,18 @@
 @import 'variables' 
 
+.blocked
+  position: absolute
+  top: 0px
+  left: 0px
+  right: 0px
+  bottom: 0px
+  background: rgba(255, 255, 255, 0.8)
+  text-align: center
+  padding: 144px 0 0 0
+  font-style: italic
+  color: #666
+  font-size: 22px
+
 .bitcoin a
   display: block
 
@@ -14,8 +27,10 @@ p
   width: 296px;
   border-top: 4px solid RED;
   float: right
+  min-height: 350px
 
 .fiat
+  position: relative
   width: 520px
   float: left
   height: 323px
